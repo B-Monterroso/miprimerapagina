@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.25rem;
+  }
+  .mobile-menu {
+    display: block;
+    width: 100%;
+    background: #db7134; /*aca cambion color al menu*/
+    line-height: 1.6em;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .mobile-menu ul {
+    border: 0.15rem solid black;
+    list-style-type: none;
+    margin: 0 auto;
+    padding-left: 0;
+    text-align: left;
+    width: 100%;
+    position: absolute;
+    background: #db7134;
+  }
+  
+ 
+  .mobile-menu li {
+    display: inline-block;
+  
+  }
+  
+  .mobile-menu li a {
+    display: block;
+    min-width: 140px;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    text-transform: normal;
+    background: #db7134;
+    text-decoration: none;
+    margin-left: -5px;
+    padding: 10px 0;
+    -webkit-transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -ms-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+  }
+  
+ 
+  .mobile-menu li:hover a {
+    color: rgba(0, 0, 0, 0.5);
+    background-color: lightgray;
+  }
+  
+  .mobile-menu li:hover ul a {
+    background: white;
+    color: black;
+    height: 40px;
+    line-height: 40px;
+  }
+  
+  .mobile-menu li:hover .mobile-menu ul a:hover {
+    color: lightgray;
+  }
+  
+  .mobile-menu li ul {
+    display: none;
+  }
+  
+  .mobile-menu li ul li {
+    display: block;
+    float: none;
+  }
+  
+  .mobile-menu li ul li a {
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
+  }
+  
+  .mobile-menu .show-menu {
+    text-decoration: none;
+    color: black;
+    background: white;
+    text-align: center;
+    padding: 10px 15px;
+    display: none;
+    cursor: pointer;
+    text-transform: normal;
+  }
+  
+  .mobile-menu .show-menu span {
+    padding-left: 2em;
+    text-align: left;
+  }
+  
+  .mobile-menu input[type="checkbox"] {
+    display: none;
+  }
+  
+  .mobile-menu input[type="checkbox"]:checked ~ #menu {
+    display: block;
+  }
+  
+  /*Responsive Styles*/
+  
+  @media screen and (max-width: 767px) {
+    .mobile-menu .lines {
+      border-bottom: 15px double black;
+      border-top: 5px solid black;
+      content: "";
+      height: 5px;
+      width: 20px;
+      padding-right: 15px;
+      float: left;
+    }
+  
+    .mobile-menu ul {
+      position: static;
+      display: none;
+    }
+    
+    .mobile-menu li {
+      margin-bottom: 0;
+    }
+  
+    .mobile-menu ul li,
+    .mobile-menu li a {
+      width: 100%;
+    }
+  
+    .mobile-menu .show-menu {
+      display: block;
+    }
+  }
+  
+  .container {
+    padding-top: 0px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  
+  h1, h2, h3 {
+    font-weight: normal;
+    line-height: 1.25;
+  }
+
+
+  .column {
+    flex: 50%;
+    padding: 10px;
+  }
+
+  .column2{
+    flex: 20%;
+    padding: 10px;
+  }
+  
+  .columntitle {
+    flex: 75%;
+    padding: 10px;
+  }
+
+  .columnimage {
+    flex: 25%;
+    padding: 10px;
+  }
+
+  .row {
+    display: flex;
+  }
+
+/* para responsive tablas */
+
+table { 
+	width: 750px; 
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+
+tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+th { 
+	background: #db7134; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+	}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+	}
+
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+	
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+	
+		position: absolute;
+
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}
+
+}
